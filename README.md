@@ -37,17 +37,33 @@ with Client(base_url="http://localhost:8081", api_token="ak_...") as client:
 Regenerate the generated client:
 
 ```bash
-./scripts/generate.sh
+make generate
 ```
 
 Build distributions:
 
 ```bash
-uv build
+make build
 ```
 
 Clean local build artifacts:
 
 ```bash
-./scripts/clean.sh
+make clean
 ```
+
+## Manual PyPI Release
+
+Create a local `.env` file from the example and set your PyPI token:
+
+```bash
+cp .env.example .env
+```
+
+Then publish with:
+
+```bash
+make publish
+```
+
+`.env` is ignored by git and should stay local.
