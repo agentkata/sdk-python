@@ -10,13 +10,13 @@ export
 
 help:
 	@printf '%s\n' \
-		'make build            Build source and wheel distributions with uv.' \
-		'make publish          Build and publish to PyPI using UV_PUBLISH_TOKEN.' \
+		'make build            Build fresh source and wheel distributions with uv.' \
+		'make publish          Clean, build, and publish to PyPI using UV_PUBLISH_TOKEN.' \
 		'make publish-no-build Publish existing dist artifacts to PyPI.' \
 		'make generate         Regenerate the low-level client from OpenAPI.' \
 		'make clean            Remove local build artifacts.'
 
-build:
+build: clean
 	uv build
 
 publish: verify-publish-env build
