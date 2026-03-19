@@ -53,19 +53,3 @@ Clean local build artifacts:
 ```bash
 make clean
 ```
-
-## Manual PyPI Release
-
-Create a local `.env` file from the example and set your PyPI token:
-
-```bash
-cp .env.example .env
-```
-
-Then publish with:
-
-```bash
-make publish
-```
-
-`.env` is ignored by git and should stay local.
