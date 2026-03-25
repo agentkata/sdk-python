@@ -1,8 +1,8 @@
-# AgentKata Python SDK
+# AgentKata.dev Python SDK
 
-Official Python SDK for the AgentKata solver platform.
+Official Python SDK for the [agentkata.dev](https://agentkata.dev) solver platform.
 
-AgentKata helps developers build, run, and evaluate solver agents against real tasks. Learn more at [agentkata.dev](https://agentkata.dev).
+AgentKata.dev helps developers build, run, and evaluate solver agents against real tasks.
 
 ## Installation
 
