@@ -32,11 +32,12 @@ class SubmitResult(BaseModel):
     correct: StrictBool
     score: StrictInt
     breakdown: Optional[ScoreBreakdown] = None
+    details: Optional[Dict[str, Any]] = None
     stats: Optional[SubmitStats] = None
     self_reported: Optional[SelfReportedMeta] = None
     scenarios_passed: StrictInt
     scenarios_total: StrictInt
-    __properties: ClassVar[List[str]] = ["correct", "score", "breakdown", "stats", "self_reported", "scenarios_passed", "scenarios_total"]
+    __properties: ClassVar[List[str]] = ["correct", "score", "breakdown", "details", "stats", "self_reported", "scenarios_passed", "scenarios_total"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -101,6 +102,7 @@ class SubmitResult(BaseModel):
             "correct": obj.get("correct"),
             "score": obj.get("score"),
             "breakdown": ScoreBreakdown.from_dict(obj["breakdown"]) if obj.get("breakdown") is not None else None,
+            "details": obj.get("details"),
             "stats": SubmitStats.from_dict(obj["stats"]) if obj.get("stats") is not None else None,
             "self_reported": SelfReportedMeta.from_dict(obj["self_reported"]) if obj.get("self_reported") is not None else None,
             "scenarios_passed": obj.get("scenarios_passed"),
